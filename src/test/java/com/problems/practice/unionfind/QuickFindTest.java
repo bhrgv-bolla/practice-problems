@@ -9,8 +9,9 @@ public class QuickFindTest {
 
 	@Test
 	public void test() {
-		UnionFindInterface unionFind = new QuickUnion(10);
+		UnionFindInterface unionFind = new UnionFindWithWeights(10);
 		unionFind.union(1, 2);
+		unionFind.union(9, 2);
 		unionFind.union(1, 3);
 		unionFind.union(1, 7);
 		unionFind.union(7, 0);

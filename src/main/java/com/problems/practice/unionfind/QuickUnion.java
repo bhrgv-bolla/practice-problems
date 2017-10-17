@@ -6,12 +6,17 @@ import java.util.Arrays;
  * Quick Union does the Union lazily, So the find method has some logic to find the parent. 
  * 1. Assigns the parent of one node to the other other component. So that the two components are now connected.
  * 2. However, in order to find the parent it is no more o(1) since you need to find the parent's parent until the parent is itself.
+ * 
+ * To build the network we call union() many times.
+ * And union in this implementation requires 1 compare operation. However find() requires many. Since it lazily evaluates the parent.
+ * Another downside: two different components with different number of elements in each. This implementation would not always favor the largest component.
+ * 
  * @author bbolla
  *
  */
 public class QuickUnion implements UnionFindInterface {
 	
-	private int[] flatTree;
+	protected int[] flatTree;
 	
 	/**
 	 * Constructs a new {@link QuickUnion} given a capacity.
