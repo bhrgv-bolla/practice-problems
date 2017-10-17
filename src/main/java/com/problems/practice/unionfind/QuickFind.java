@@ -21,10 +21,13 @@ public class QuickFind implements UnionFindInterface {
 		}
 	}	
 
-	@Override
 	public void union(int a, int b) {
 		int parentOf_a = find(a);
 		int parentOf_b = find(b);
+		
+		if(parentOf_a == parentOf_b) {
+			return;
+		}
 		
 		/*
 		 * Change the parent of all the nodes that had parentOf_b previously
@@ -37,7 +40,6 @@ public class QuickFind implements UnionFindInterface {
 		}
 	}
 
-	@Override
 	public int find(int a) {
 		return this.flatTree[a];
 	}
