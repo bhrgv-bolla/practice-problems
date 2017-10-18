@@ -44,50 +44,20 @@ public class MergeSort implements SortingAlgorithm {
 						; i<auxLength
 						; i++) {
 			
-			if(arrayToBeSorted[c_index1].compareTo(arrayToBeSorted[sortedArray2_end]) > 0) { 
-				/*
-				 * If the current sortedArray1 element is greater then 
-				 * => All the remaining elements of sortedArray2 go before this element. 
-				 */
-				for(int j=c_index2; j<=sortedArray2_end; j++, i++) {
-					aux[i] = arrayToBeSorted[j];
-				}
-				
-				for(int j=c_index1; j<=sortedArray1_end; j++, i++) {
-					aux[i] = arrayToBeSorted[j];
-				}
-				//The loop should be exited after this. 
-			} else if(arrayToBeSorted[c_index2].compareTo(arrayToBeSorted[sortedArray1_end]) > 0) { 
-				/*
-				 * If the current sortedArray2 element is greater than the other sortedArray1 elements end. 
-				 * => Then place the elements of the sortedArray1 infront of the sortedArray2 elements. 
-				 */
-				for(int j=c_index1; j<=sortedArray1_end; j++, i++) {
-					aux[i] = arrayToBeSorted[j];
-				}
-				
-				for(int j=c_index2; j<=sortedArray2_end; j++, i++) {
-					aux[i] = arrayToBeSorted[j];
-				}
-				//The loop should be exited after this. 
-			} else {
-				/*
-				 * Compare the current indices of both the sorted arrays. 
-				 * Increment the one which is going to be the next.
-				 * Variables : c_index1, c_index2. 
-				 */
-				if(arrayToBeSorted[c_index1].compareTo(arrayToBeSorted[c_index2]) <= 0) { //If the element is less than or equal this will be next element to go into the auxiliary array.
-					aux[i] = arrayToBeSorted[c_index1];
-					if(c_index1 != sortedArray1_end) {
-						c_index1++;
-					}
-				} else { //The element from the second sorted array goes in.
-					aux[i] = arrayToBeSorted[c_index2];
-					if(c_index2 != sortedArray2_end) {
-						c_index2++;
-					}
+			if(c_index2 == -1 || (c_index1 != -1 && arrayToBeSorted[c_index1].compareTo(arrayToBeSorted[c_index2]) <= 0)) { //If the element is less than or equal this will be next element to go into the auxiliary array.
+				aux[i] = arrayToBeSorted[c_index1];
+				c_index1++;
+				if(c_index1 > sortedArray1_end) {
+					c_index1 = -1;
+				} 
+			} else { //The element from the second sorted array goes in.
+				aux[i] = arrayToBeSorted[c_index2];
+				c_index2++;
+				if(c_index2 > sortedArray2_end) {
+					c_index2 = -1;
 				}
 			}
+			
 		}
 		
 		/*
