@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Logger {
 	
-	public static <T> void debugAny(T thingsToDebug) {
+	private static <T> void debugAny(T thingsToDebug) {
 		System.out.print(thingsToDebug);
 	}
 	
