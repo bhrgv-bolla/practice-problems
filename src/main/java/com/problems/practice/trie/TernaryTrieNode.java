@@ -3,15 +3,15 @@ package com.problems.practice.trie;
 import lombok.ToString;
 
 @ToString
-public class TrieNode {
+public class TernaryTrieNode {
 	
 	char val;
 	String item;
-	TrieNode middle;
-	TrieNode left;
-	TrieNode right;
+	TernaryTrieNode middle;
+	TernaryTrieNode left;
+	TernaryTrieNode right;
 	
-	TrieNode(char val) {
+	TernaryTrieNode(char val) {
 		this.val = val;
 		this.item = null;
 		this.middle = null;

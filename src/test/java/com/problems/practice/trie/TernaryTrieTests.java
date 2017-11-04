@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import com.problems.Logger;
 
-public class TrieTests {
+public class TernaryTrieTests {
 
 	@Test
 	public void testsTrie() {
-		Trie trie = new Trie();
+		Trie trie = new TernaryTrie();
 		//add operations
 		trie.add("found");
 		trie.add("second string");
