@@ -12,16 +12,16 @@ public class SortingTests {
 
 	@Test
 	public void testSorting() {
-		SortingAlgorithm sortingAlgorithm = new QuickSort();
+		SortingAlgorithm sortingAlgorithm = new HeapSort();
 		Integer[] arrayToBeSorted = new Integer[]{1, 5, 6, 2, 7, 1, 3, 4, 5, 1, 1000, 12433};
 		sortingAlgorithm.sort(arrayToBeSorted);
 		Logger.debug(Arrays.toString(arrayToBeSorted));
 	}
 	
 	
-	@Test
+//	@Test
 	public void testSortingAlgorithm() {
-		empericalSortingTests(new QuickSort());
+		empericalSortingTests(new HeapSort());
 	}
 	
 	
@@ -35,8 +35,8 @@ public class SortingTests {
 		millis1Million = System.currentTimeMillis() - millis1Million;
 
 		long millis1Billion = System.currentTimeMillis();
-		sortingAlgorithm.sort(randomNIntegerArray(10000000));
-		millis1Billion = System.currentTimeMillis() - millis1Billion;
+//		sortingAlgorithm.sort(randomNIntegerArray(10000000));
+//		millis1Billion = System.currentTimeMillis() - millis1Billion;
 		
 		Logger.debug(Duration.ofMillis(millis1000), Duration.ofMillis(millis1Million), Duration.ofMillis(millis1Billion));
 	}

@@ -9,7 +9,8 @@ import com.problems.Logger;
  * 
  * 	Return the MaxElement of the Heap.
  * 	Insert into the heap.
- *  Change the priority of an element in the heap.
+ *  TODO Change the priority of an element in the heap.
+ *  TODO delete an element from the heap.
  *  Build a heap from unsorted data.
  * @author bbolla
  *
