@@ -94,7 +94,7 @@ public class FordFulkerson {
 				}	
 			}
 		}
-		
+		Logger.debug("marked : ", Arrays.toString(marked)); //Min cut can be obtained by seeing all unreachable edges. 
 		return marked[target];
 	}
 	
