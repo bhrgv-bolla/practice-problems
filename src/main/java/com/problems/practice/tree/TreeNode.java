@@ -5,7 +5,7 @@ package com.problems.practice.tree;
  * @author bbolla
  *
  */
-public class TreeNode<T extends Comparable> {
+public class TreeNode<T extends Comparable<T>> {
 	
 	private T val;
 	private TreeNode left;
