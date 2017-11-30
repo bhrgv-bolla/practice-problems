@@ -8,8 +8,8 @@ package com.problems.practice.tree;
 public class TreeNode<T extends Comparable<T>> {
 	
 	private T val;
-	private TreeNode left;
-	private TreeNode right;
+	private TreeNode<T> left;
+	private TreeNode<T> right;
 	
 	
 	/**
@@ -18,7 +18,7 @@ public class TreeNode<T extends Comparable<T>> {
 	 * @param val
 	 * @param right
 	 */
-	public TreeNode(TreeNode left, T val, TreeNode right) {
+	public TreeNode(TreeNode<T> left, T val, TreeNode<T> right) {
 		this.val = val;
 		this.left = left;
 		this.right = right;
@@ -38,7 +38,7 @@ public class TreeNode<T extends Comparable<T>> {
 	 * Returns leftTreeNode
 	 * @return
 	 */
-	public TreeNode left() {
+	public TreeNode<T> left() {
 		return this.left;
 	}
 	
@@ -46,7 +46,7 @@ public class TreeNode<T extends Comparable<T>> {
 	 * Returns rightTreeNode
 	 * @return
 	 */
-	public TreeNode right() {
+	public TreeNode<T> right() {
 		return this.right;
 	}
 	
@@ -54,8 +54,8 @@ public class TreeNode<T extends Comparable<T>> {
 	 * Returns the val of the current Node.
 	 * @return
 	 */
-	public TreeNode val() {
-		return this.val();
+	public T val() {
+		return this.val;
 	}
 	
 
