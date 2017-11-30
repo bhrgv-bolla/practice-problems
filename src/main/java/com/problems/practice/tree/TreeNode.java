@@ -5,9 +5,9 @@ package com.problems.practice.tree;
  * @author bbolla
  *
  */
-public class TreeNode {
+public class TreeNode<T extends Comparable> {
 	
-	private Comparable val;
+	private T val;
 	private TreeNode left;
 	private TreeNode right;
 	
@@ -18,7 +18,7 @@ public class TreeNode {
 	 * @param val
 	 * @param right
 	 */
-	public TreeNode(TreeNode left, Comparable val, TreeNode right) {
+	public TreeNode(TreeNode left, T val, TreeNode right) {
 		this.val = val;
 		this.left = left;
 		this.right = right;
@@ -29,9 +29,34 @@ public class TreeNode {
 	 * Constructs a new {@link TreeNode} from value 
 	 * @param val
 	 */
-	public TreeNode(Comparable val) {
+	public TreeNode(T val) {
 		this.val = val;
 		this.left = this.right = null;
 	}
+	
+	/**
+	 * Returns leftTreeNode
+	 * @return
+	 */
+	public TreeNode left() {
+		return this.left;
+	}
+	
+	/**
+	 * Returns rightTreeNode
+	 * @return
+	 */
+	public TreeNode right() {
+		return this.right;
+	}
+	
+	/**
+	 * Returns the val of the current Node.
+	 * @return
+	 */
+	public TreeNode val() {
+		return this.val();
+	}
+	
 
 }
